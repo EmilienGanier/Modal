@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BolchiMove : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BolchiMove : MonoBehaviour
     void Start()
     {
         grounded = false;
+        direction = new Vector2(0, 0);
     }
 
     // Update is called once per frame
@@ -32,14 +34,15 @@ public class BolchiMove : MonoBehaviour
     private void Move(){
         int moving = 0;
         if (Input.GetButton("MoveRight")) {
-            direction = new Vector2(1, 0);
+            direction.x = Math.Max(direction.x, 1);
             moving ++;
         }
         if (Input.GetButton("MoveLeft")) {
-            direction = new Vector2(-1, 0);
+            direction.x = Math.Min(direction.x, -1);
             moving ++;
         }
-        if (moving == 1) body.velocity = direction * moveSpeed;
+        Vector3 movement = direction * moveSpeed;
+        if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
     }
 
     private void Jump(){
