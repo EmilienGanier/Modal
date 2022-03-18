@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 307356267}
   - component: {fileID: 307356266}
   - component: {fileID: 307356265}
+  - component: {fileID: 307356269}
   m_Layer: 0
   m_Name: Bolchie
   m_TagString: Untagged
@@ -162,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &307356266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,8 +228,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1639694969
-  m_SortingLayer: 2
+  m_SortingLayerID: 1705109161
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac96b7730bbe6594292db8166086fd56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -249,13 +250,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307356264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: -1.52, z: 0}
+  m_LocalPosition: {x: -2.61, y: -0.64, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307356269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307356264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57757c43402754148bd7e4c930c2e24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  moveSpeed: 5
+  grounded: 0
+  direction: {x: 0, y: 0}
 --- !u!1 &629790587
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +494,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.031287
+  orthographic size: 3.972773
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -501,7 +518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754062465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -0.55, z: -10}
   m_LocalScale: {x: 0.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -600,8 +617,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1705109161
-  m_SortingLayer: 1
+  m_SortingLayerID: 1639694969
+  m_SortingLayer: 2
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: a8e6a1f49af727245a3af7c29b1054ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -769,8 +786,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1705109161
-  m_SortingLayer: 1
+  m_SortingLayerID: 1639694969
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1626789689, guid: 8112f511ecc125b4688bc0e9b6947dab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -792,7 +809,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1241963173}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dd0f360c0e9771a4b8b4f362314565d4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
