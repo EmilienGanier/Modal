@@ -32,9 +32,11 @@ public class BolchiMove : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.otherCollider.tag == "Ground") grounded = true; 
         if (other.collider.tag == "Ground") grounded = true; 
-        if (other.otherCollider.tag == "Ground") Debug.Log("kljfl"); 
+    }
+
+    void OnCollisionExit2D(Collision2D other) {
+        if (other.collider.tag == "Ground") grounded = false; 
     }
 
 
@@ -54,7 +56,7 @@ public class BolchiMove : MonoBehaviour
     }
 
     private void Jump(){
-        if (Input.GetButton("Jump")&&grounded) body.AddForce(new Vector2(0, 2), ForceMode2D.Impulse);
+        if (Input.GetButton("Jump")&&grounded) body.AddForce(new Vector2(0, 0.5f), ForceMode2D.Impulse);
     }
 
 
