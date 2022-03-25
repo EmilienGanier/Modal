@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4281517380245511915}
   - component: {fileID: -3117209062950047285}
   - component: {fileID: -8054146358993282096}
+  - component: {fileID: 8754286568765837011}
+  - component: {fileID: 5722304690456340673}
   m_Layer: 0
   m_Name: Ennemy
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4165053500163167776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0114, y: 0, z: 0}
+  m_LocalScale: {x: 4.94, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +55,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &-8054146358993282096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,14 +97,48 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c650f09d930b6e947bf316a5f296f2ab, type: 3}
+  m_Sprite: {fileID: -1454254891, guid: c650f09d930b6e947bf316a5f296f2ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.44, y: 1.92}
+  m_Size: {x: 0.38, y: 0.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8754286568765837011
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165053500163167776}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009255394, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.182567
+--- !u!114 &5722304690456340673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165053500163167776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67b598567424a1498e204a0f947773e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: -3117209062950047285}
+  spriteRenderer: {fileID: -8054146358993282096}
+  goLeft: {fileID: -552700748, guid: c650f09d930b6e947bf316a5f296f2ab, type: 3}
+  goRight: {fileID: 376754785, guid: c650f09d930b6e947bf316a5f296f2ab, type: 3}
+  moveSpeed: 1
+  move: 0
