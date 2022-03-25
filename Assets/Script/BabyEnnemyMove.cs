@@ -9,15 +9,15 @@ public class BabyEnnemyMove : MonoBehaviour
     public Sprite goLeft;
     public Sprite goRight;
     public float moveSpeed;
-    public bool move;
+    public int gr;
 
     private Vector2 direction;
     // Start is called before the first frame update
     void Start()
     {
         direction = new Vector2(1, 0);
-        //move = true;
-        //spriteRenderer.sprite = goRight;
+        this.GetComponent<SpriteRenderer>().sprite = goRight;
+        gr = 1;
         moveSpeed = 1;
     }
 
@@ -38,7 +38,9 @@ public class BabyEnnemyMove : MonoBehaviour
         if (other.collider.tag == "Wall")
         {
             moveSpeed = -moveSpeed;
+            
             changeSprite();
+            gr = -gr;
         }
     }
 
@@ -49,8 +51,8 @@ public class BabyEnnemyMove : MonoBehaviour
 
     void changeSprite()
     {
-        if (spriteRenderer.sprite == goRight) spriteRenderer.sprite = goLeft;
-        if (spriteRenderer.sprite == goLeft) spriteRenderer.sprite = goRight;
+        if (gr==1) this.GetComponent<SpriteRenderer>().sprite = goLeft;
+        if (gr==-1) this.GetComponent<SpriteRenderer>().sprite = goRight;
     }
 
     void touchBolchie()
