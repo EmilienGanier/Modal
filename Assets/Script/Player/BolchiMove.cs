@@ -14,6 +14,8 @@ public class BolchiMove : MonoBehaviour
     private Vector2 direction;
     private bool grounded;
 
+
+    // PRIMARY
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +28,17 @@ public class BolchiMove : MonoBehaviour
     {
         Move();
         Jump();
-        if(body.transform.position[1]<-2.9f) grounded = true;
-        else grounded = false;
+        //grounded = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.otherCollider.tag == "Ground") grounded = true; 
+        if (other.collider.tag == "Ground") grounded = true; 
+        if (other.otherCollider.tag == "Ground") Debug.Log("kljfl"); 
     }
 
 
+    // OTHER
     private void Move(){
         int moving = 0;
         if (Input.GetButton("MoveRight")) {
