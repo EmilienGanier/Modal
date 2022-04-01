@@ -25,7 +25,7 @@ public class movementTest : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        grounded = Physics2D.OverlapArea(groundL.position, groundR.position, "layerMask" = 6); //cree une boit de collision
+        grounded = Physics2D.OverlapArea(groundL.position, groundR.position, 0); //cree une boit de collision
 
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
 
