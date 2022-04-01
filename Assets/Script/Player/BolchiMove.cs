@@ -13,9 +13,9 @@ public class BolchiMove : MonoBehaviour
     public float jumpForce;
 
     private Vector2 direction;
-    private bool grounded;
+    public bool grounded;
 
-    private bool mirror;
+    public bool mirror;
 
 
     // PRIMARY
@@ -40,18 +40,13 @@ public class BolchiMove : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other) {
         if (other.collider.tag == "Ground") grounded = false;
-        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror")) mirror = true;
     }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror") && !mirror) mirror = true;
-        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror") && mirror) mirror = false;
-    }
-
 
     // OTHER
     private void Move() {
+        Debug.Log("Je suis dans le Move");
+        if (Input.GetButton("EnterMirror") && !mirror) mirror = true;
+        if (Input.GetButton("EnterMirror") && mirror) mirror = false;
         int moving = 0;
         if (!mirror) {
             if (Input.GetButton("MoveRight")) {
@@ -66,6 +61,7 @@ public class BolchiMove : MonoBehaviour
             if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
         }
         else {
+            Debug.Log("je suis dans le else");
             if (Input.GetButton("MoveRight"))
             {
                 direction.x = Math.Max(direction.x, -1);

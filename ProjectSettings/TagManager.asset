@@ -8,6 +8,7 @@ TagManager:
   - Bolchie
   - Ennemy
   - Wall
+  - Mirror
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - Water
   - UI
   - ground
-  - 
-  - 
-  - 
+  - Mirror
+  - Bolchie
+  - Stone
   - 
   - 
   - 
