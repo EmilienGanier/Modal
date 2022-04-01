@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class bolchieHit : MonoBehaviour
 {
+    public static bolchieHit instance;
     public Rigidbody2D body;
     public bool hasBatte;
     public bool isHitting;
+    public bool attacking;
   
     // Start is called before the first frame update
     void Start()
