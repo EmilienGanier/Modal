@@ -15,6 +15,8 @@ public class BolchiMove : MonoBehaviour
     private Vector2 direction;
     private bool grounded;
 
+    private bool mirror;
+
 
     // PRIMARY
     // Start is called before the first frame update
@@ -33,32 +35,57 @@ public class BolchiMove : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.tag == "Ground") grounded = true; 
+        if (other.collider.tag == "Ground") grounded = true;
     }
 
     void OnCollisionExit2D(Collision2D other) {
-        if (other.collider.tag == "Ground") grounded = false; 
+        if (other.collider.tag == "Ground") grounded = false;
+        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror")) mirror = true;
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror") && !mirror) mirror = true;
+        if (other.collider.tag == "Mirror" && Input.GetButton("EnterMirror") && mirror) mirror = false;
     }
 
 
     // OTHER
-    private void Move(){
+    private void Move() {
         int moving = 0;
-        if (Input.GetButton("MoveRight")) {
-            direction.x = Math.Max(direction.x, 1);
-            moving ++;
+        if (!mirror) {
+            if (Input.GetButton("MoveRight")) {
+                direction.x = Math.Max(direction.x, 1);
+                moving++;
+            }
+            if (Input.GetButton("MoveLeft")) {
+                direction.x = Math.Min(direction.x, -1);
+                moving++;
+            }
+            Vector3 movement = direction * moveSpeed;
+            if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
         }
-        if (Input.GetButton("MoveLeft")) {
-            direction.x = Math.Min(direction.x, -1);
-            moving ++;
+        else {
+            if (Input.GetButton("MoveRight"))
+            {
+                direction.x = Math.Max(direction.x, -1);
+                moving++;
+            }
+            if (Input.GetButton("MoveLeft"))
+            {
+                direction.x = Math.Min(direction.x, 1);
+                moving++;
+            }
+            Vector3 movement = direction * moveSpeed;
+            if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
         }
-        Vector3 movement = direction * moveSpeed;
-        if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
     }
 
-    private void Jump(){
-        if (Input.GetButton("Jump")&&grounded) body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+    private void Jump() {
+        if (Input.GetButton("Jump") && grounded) body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
     }
+}
 
 
 
@@ -112,4 +139,4 @@ public class BolchiMove : MonoBehaviour
         curve_debug_velocity.AddKey(
             new Keyframe(Time.time, body.velocity.x));
     }*/
-}
+
