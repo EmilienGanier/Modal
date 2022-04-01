@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ennemyMove : MonoBehaviour
+public class EnnemyMove : MonoBehaviour
 {
+    public static EnnemyMove instance;
     public Rigidbody2D body;
-    public float moveSpeed;
-
     private Vector2 direction;
+    public float speed;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,7 @@ public class ennemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void Move(float speed)
@@ -34,13 +37,13 @@ public class ennemyMove : MonoBehaviour
 
     void touchBolchie()
     {
-       if (/*Bolchie est en train de taper */1 == 1) isHitten();
+        if (/*Bolchie est en train de taper */1==1) isHitten();
     }
 
     void isHitten()
     {
 
-        }
+    }
 
     void killsBolchie()
     {
