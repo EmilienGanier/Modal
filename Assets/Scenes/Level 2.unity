@@ -278,7 +278,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 307356265}
   moveSpeed: 3
+  jumpForce: 1
 --- !u!1 &452795542
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +928,7 @@ GameObject:
   - component: {fileID: 1241963174}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

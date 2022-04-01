@@ -10,6 +10,7 @@ public class BolchiMove : MonoBehaviour
     //public OnNewInputHandler OnNewInput;
     public Rigidbody2D body;
     public float moveSpeed;
+    public float jumpForce;
 
     private Vector2 direction;
     private bool grounded;
@@ -56,7 +57,7 @@ public class BolchiMove : MonoBehaviour
     }
 
     private void Jump(){
-        if (Input.GetButton("Jump")&&grounded) body.AddForce(new Vector2(0, 0.5f), ForceMode2D.Impulse);
+        if (Input.GetButton("Jump")&&grounded) body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
     }
 
 
