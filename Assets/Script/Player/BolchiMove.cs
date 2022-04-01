@@ -16,6 +16,7 @@ public class BolchiMove : MonoBehaviour
     public bool grounded;
 
     public bool mirror;
+    public bool inMirror;
 
 
     // PRIMARY
@@ -42,39 +43,42 @@ public class BolchiMove : MonoBehaviour
         if (other.collider.tag == "Ground") grounded = false;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Mirror") inMirror = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Mirror") inMirror = false;
+    }
+
+
     // OTHER
     private void Move() {
-        Debug.Log("Je suis dans le Move");
-        if (Input.GetButton("EnterMirror") && !mirror) mirror = true;
-        if (Input.GetButton("EnterMirror") && mirror) mirror = false;
+        if (Input.GetButtonDown("EnterMirror") && inMirror)
+        {
+            mirror = !mirror;
+        }
         int moving = 0;
-        if (!mirror) {
-            if (Input.GetButton("MoveRight")) {
-                direction.x = Math.Max(direction.x, 1);
-                moving++;
-            }
-            if (Input.GetButton("MoveLeft")) {
-                direction.x = Math.Min(direction.x, -1);
-                moving++;
-            }
-            Vector3 movement = direction * moveSpeed;
-            if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
+        if (Input.GetButton("MoveRight") && !mirror) {
+            direction.x = Math.Max(direction.x, 1);
+            moving++;
         }
-        else {
-            Debug.Log("je suis dans le else");
-            if (Input.GetButton("MoveRight"))
-            {
-                direction.x = Math.Max(direction.x, -1);
-                moving++;
-            }
-            if (Input.GetButton("MoveLeft"))
-            {
-                direction.x = Math.Min(direction.x, 1);
-                moving++;
-            }
-            Vector3 movement = direction * moveSpeed;
-            if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
+        if (Input.GetButton("MoveLeft") && !mirror) {
+            direction.x = Math.Min(direction.x, -1);
+            moving++;
         }
+        if (Input.GetButton("MoveRight") && mirror) {
+            direction.x = Math.Min(direction.x, -1);
+            moving++;
+        }
+        if (Input.GetButton("MoveLeft") &&mirror) {
+            direction.x = Math.Max(direction.x, 1);
+            moving++;
+        }
+        Vector3 movement = direction * moveSpeed;
+        if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
     }
 
 

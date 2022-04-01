@@ -424,6 +424,7 @@ MonoBehaviour:
   jumpForce: 2
   grounded: 0
   mirror: 0
+  inMirror: 1
 --- !u!1 &449025653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1113,7 @@ GameObject:
   - component: {fileID: 1543610856}
   m_Layer: 7
   m_Name: GroundCollider
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1254,7 +1255,7 @@ GameObject:
   - component: {fileID: 1697229887}
   m_Layer: 7
   m_Name: BolchieCollider
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
