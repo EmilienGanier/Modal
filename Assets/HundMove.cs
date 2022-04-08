@@ -12,7 +12,7 @@ public class HundMove : MonoBehaviour
     public bool triggered;
     private bool mustGoBack;
     private bool isWaiting;
-    
+    private bool wasAlreadyWaiting;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -20,6 +20,7 @@ public class HundMove : MonoBehaviour
     {
         triggered = false;
         isWaiting = false;
+        wasAlreadyWaiting = false;
         mustGoBack = false;
         if (!goRight){
              speed = -speed;
@@ -36,12 +37,12 @@ public class HundMove : MonoBehaviour
         //vSpeed.y = 0;
         ListenTrigger();
         ListenStop();
-        //body.velocity = vSpeed;
+        body.velocity = vSpeed;
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "WaitPlace") isWaiting = true;
+        if (other.collider.tag == "WaitingPlace") isWaiting = true;
         if (other.collider.tag == "Goal") mustGoBack = true;
     }
     void OnCollisionExit2D(Collision2D other)
@@ -65,8 +66,7 @@ public class HundMove : MonoBehaviour
     void Attack()
     {
        vSpeed.x = speed;
-       body.velocity = vSpeed;
-       animator.SetTrigger("Trigger");
+        //animator.SetTrigger("Trigger");
     }
 
     void ListenStop()
@@ -76,9 +76,9 @@ public class HundMove : MonoBehaviour
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = 0;
-            body.velocity = vSpeed;
-            animator.SetTrigger("MustWait");
-            isWaiting = false;
+            //animator.SetTrigger("MustWait");
+            wasAlreadyWaiting = true;
+            
         }
         else if (mustGoBack)
         {
@@ -86,8 +86,7 @@ public class HundMove : MonoBehaviour
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = -speed;
-            body.velocity = vSpeed;
-            animator.SetTrigger("GoBack");
+            //animator.SetTrigger("GoBack");
             mustGoBack = false;
         }
     }
