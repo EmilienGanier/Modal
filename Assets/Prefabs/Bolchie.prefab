@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5347198347597035650}
   - component: {fileID: 2074049058575159022}
   - component: {fileID: 7955355903939356844}
+  - component: {fileID: 5607634885447759496}
   m_Layer: 0
   m_Name: Bolchie
   m_TagString: Bolchie
@@ -52,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.060120165, y: -0.18036151}
+  m_Offset: {x: -0.060120106, y: -0.10188222}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -63,7 +64,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0441885, y: 6.6133265}
+  m_Size: {x: 2.0441885, y: 6.456368}
   m_EdgeRadius: 0
 --- !u!50 &7117819821921782419
 Rigidbody2D:
@@ -205,6 +206,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 7117819821921782419}
+--- !u!58 &5607634885447759496
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840800965589013924}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.20236033, y: -3.0569124}
+  serializedVersion: 2
+  m_Radius: 0.42950374
 --- !u!1 &6435566467301026234
 GameObject:
   m_ObjectHideFlags: 0

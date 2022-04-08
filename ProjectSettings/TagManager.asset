@@ -10,6 +10,8 @@ TagManager:
   - Wall
   - Mirror
   - MirrorPlatform
+  - Goal
+  - WaitingPlace
   layers:
   - Default
   - TransparentFX
