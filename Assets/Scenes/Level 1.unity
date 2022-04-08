@@ -359,7 +359,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 307356265}
   moveSpeed: 3
-  jumpForce: 0
+  jumpForce: 2
+  grounded: 0
+  mirror: 0
+  inMirror: 0
 --- !u!114 &307356270
 MonoBehaviour:
   m_ObjectHideFlags: 0
