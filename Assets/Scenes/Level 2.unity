@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 307356269}
   m_Layer: 8
   m_Name: Bolchie
-  m_TagString: Untagged
+  m_TagString: Bolchie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,8 +378,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1705109161
-  m_SortingLayer: 1
+  m_SortingLayerID: 1639694969
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac96b7730bbe6594292db8166086fd56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -424,7 +424,7 @@ MonoBehaviour:
   jumpForce: 2
   grounded: 0
   mirror: 0
-  inMirror: 1
+  inMirror: 0
 --- !u!1 &449025653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,8 +1396,7 @@ GameObject:
   - component: {fileID: 2045509912}
   - component: {fileID: 2045509913}
   - component: {fileID: 2045509915}
-  - component: {fileID: 2045509914}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Mirror Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1412,7 +1411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045509909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.74610865, z: -0.042919595}
+  m_LocalPosition: {x: 5, y: -2.6, z: -0.042919595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1461,7 +1460,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1320270837, guid: fc85d7d595cfc8c4396e3cf9397cbf7a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1471,20 +1470,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2045509914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045509909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fe065285ecc7640ae293407cca8f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mirrorOff: {fileID: 2024922462, guid: fc85d7d595cfc8c4396e3cf9397cbf7a, type: 3}
-  mirrorOn: {fileID: 2024922462, guid: fc85d7d595cfc8c4396e3cf9397cbf7a, type: 3}
 --- !u!61 &2045509915
 BoxCollider2D:
   m_ObjectHideFlags: 0

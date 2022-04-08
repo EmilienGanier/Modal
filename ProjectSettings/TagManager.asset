@@ -9,6 +9,7 @@ TagManager:
   - Ennemy
   - Wall
   - Mirror
+  - MirrorPlatform
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Mirror
   - Bolchie
   - Stone
-  - 
+  - MirrorPlatform
   - 
   - 
   - 

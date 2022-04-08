@@ -45,7 +45,7 @@ public class BolchiMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Mirror") inMirror = true;
+        if (collision.CompareTag("Mirror")) inMirror = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
