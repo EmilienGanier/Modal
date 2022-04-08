@@ -45,7 +45,7 @@ public class Animations : MonoBehaviour
     {
         if (body.velocity.x < 0) animator.SetBool("Right", false);
         else if (body.velocity.x > 0) animator.SetBool("Right", true);
-        float speed = abs(body.velocity.x);
+        float speed = Mathf.Abs(body.velocity.x);
         animator.SetFloat("Speed" , speed) ;
         
     }
