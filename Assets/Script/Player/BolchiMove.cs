@@ -101,7 +101,10 @@ public class BolchiMove : MonoBehaviour
 
 
     private void Jump() {
-        if (Input.GetButton("Jump") && grounded) body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        if (Input.GetButton("Jump") && grounded) {
+            //body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            body.AddForce(new Vector2(0, jumpForce));
+        }
     }
 }
 

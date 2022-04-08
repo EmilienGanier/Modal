@@ -13,6 +13,7 @@ TagManager:
   - Goal
   - WaitingPlace
   - Start
+  - Ladder
   layers:
   - Default
   - TransparentFX
