@@ -7,6 +7,8 @@ public class Animations : MonoBehaviour
     private Animator animator;
     private bool grounded;
     public Rigidbody2D body;
+    private bool goRight;
+ 
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -14,7 +16,7 @@ public class Animations : MonoBehaviour
     void Start()
     {
         grounded = false;
-        
+        goRight = true;
         // Hooks.
         //transform.parent.GetComponent<MarkThrower>().OnThrow += LaunchThrow;
     }
@@ -37,17 +39,25 @@ public class Animations : MonoBehaviour
         if (other.collider.tag == "Ground") grounded = false;
     }
 
-    void JumpAnim() //ouii ça marche !
+    void JumpAnim() 
     {
         animator.SetBool("Ground" , grounded);
     }
     void RunAnim()
     {
-        if (body.velocity.x < 0) animator.SetBool("Right", false);
-        else if (body.velocity.x > 0) animator.SetBool("Right", true);
+        if (goRight && body.velocity.x < -0.1f) ChangeDirection();
+        else if (!goRight && body.velocity.x > 0.1f) ChangeDirection();
         float speed = Mathf.Abs(body.velocity.x);
         animator.SetFloat("Speed" , speed) ;
         
+    }
+    void ChangeDirection()
+    {
+        //transform.localScale.x *= -1;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+        goRight = !goRight;
     }
 
     void AttackAnim()
