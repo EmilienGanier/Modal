@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353ad056bd8e8eb468e1ec5d2f3742e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 4713160383866929529}
+  goRight: 0
+  speed: 0
+  triggered: 0
 --- !u!95 &-3888620423832533303
 Animator:
   serializedVersion: 4
