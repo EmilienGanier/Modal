@@ -53,7 +53,7 @@ public class HundMove : MonoBehaviour
     void ListenTrigger()
     {
         //triggered = ????
-        if (Input.GetButton("return")) triggered = true;
+        if (Input.GetButton("EnterMirror")) triggered = true;
         if (triggered)
         {
             Attack();

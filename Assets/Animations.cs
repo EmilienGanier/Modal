@@ -66,7 +66,7 @@ public class Animations : MonoBehaviour
 
     void AttackAnim()
     {
-        animator.SetBool("Attack" , bolchieHit.instance.attacking);
+        //animator.SetBool("Attack" , bolchieHit.instance.attacking);
     }
     /*void DeadAnim()
     {
