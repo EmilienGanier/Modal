@@ -11,26 +11,33 @@ public class BolchiMove : MonoBehaviour
     public Rigidbody2D body;
     public float moveSpeed;
     public float jumpForce;
+    public float climbSpeed;
 
     private Vector2 direction;
-    public bool grounded;
+    private bool grounded;
+    public bool isClimbing = false;
+
 
     public bool mirror;
     public bool inMirror;
+    private Vector3 velocity = Vector3.zero;
+
+    private float verticalmovement;
 
 
     // PRIMARY
     // Start is called before the first frame update
     void Start()
     {
-        grounded = false;
         direction = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        Move();
+    {        
+        verticalmovement = Input.GetAxis("Vertical") * climbSpeed * Time.deltaTime;
+
+        Move(verticalmovement);
         Jump();
         //grounded = false;
     }
@@ -55,7 +62,7 @@ public class BolchiMove : MonoBehaviour
 
 
     // OTHER
-    private void Move() {
+    private void Move(float _verticalmovement) {
         if (Input.GetButtonDown("EnterMirror") && inMirror)
         {
             mirror = !mirror;
@@ -79,6 +86,11 @@ public class BolchiMove : MonoBehaviour
         }
         Vector3 movement = direction * moveSpeed;
         if (moving == 1) body.velocity = new Vector3(movement.x, body.velocity.y, 0.0f);
+
+        if(isClimbing){
+            Vector3 targetVelocity = new Vector2(body.velocity.x, _verticalmovement);
+            body.velocity = Vector3.SmoothDamp(body.velocity, targetVelocity, ref velocity, .05f);
+        }
     }
 
 

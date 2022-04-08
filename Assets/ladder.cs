@@ -5,16 +5,21 @@ using UnityEngine;
 public class ladder : MonoBehaviour
 {
 
-    public bool isInRange;
+    private bool isInRange;
+    private BolchiMove bolchiMove;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        bolchiMove = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<BolchiMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isInRange){
+            bolchiMove.isClimbing = true;
+        }
+        else bolchiMove.isClimbing = false;
         
     }
 
