@@ -14,7 +14,7 @@ public class BolchiMove : MonoBehaviour
     public float climbSpeed;
 
     private Vector2 direction;
-    private bool grounded;
+    public bool grounded;
     public bool isClimbing = false;
 
 
@@ -22,7 +22,7 @@ public class BolchiMove : MonoBehaviour
     public bool inMirror;
     private Vector3 velocity = Vector3.zero;
 
-    private float verticalmovement;
+    public float verticalmovement;
 
 
     // PRIMARY
