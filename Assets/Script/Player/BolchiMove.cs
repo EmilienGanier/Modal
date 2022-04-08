@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BolchiMove : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class BolchiMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.collider.tag == "Ground") grounded = true;
+        if (other.collider.tag == "Start")
+        {
+            SceneManager.LoadScene("Level 1");
+            Debug.Log("uegyflaiu");
+        }
     }
 
     void OnCollisionExit2D(Collision2D other) {

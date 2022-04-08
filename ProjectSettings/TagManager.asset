@@ -12,6 +12,7 @@ TagManager:
   - MirrorPlatform
   - Goal
   - WaitingPlace
+  - Start
   layers:
   - Default
   - TransparentFX

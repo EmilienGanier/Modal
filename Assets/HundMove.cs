@@ -27,15 +27,16 @@ public class HundMove : MonoBehaviour
              theScale.x *= -1;
              transform.localScale = theScale;
         }
-        vSpeed = new Vector2(speed, 0);
+        vSpeed = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-       // ListenTrigger();
-       // ListenStop();
-        test();
+        //vSpeed.y = 0;
+        ListenTrigger();
+        ListenStop();
+        //body.velocity = vSpeed;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -49,12 +50,7 @@ public class HundMove : MonoBehaviour
        // if (other.collider.tag == "Goal") mustGoBack = false;
     }
 
-    void test()
-    {
-
-    }
-
-    /*void ListenTrigger()
+    void ListenTrigger()
     {
         //triggered = ????
         if (Input.GetButton("return")) triggered = true;
@@ -94,5 +90,5 @@ public class HundMove : MonoBehaviour
             animator.SetTrigger("GoBack");
             mustGoBack = false;
         }
-    }*/
+    }
 }

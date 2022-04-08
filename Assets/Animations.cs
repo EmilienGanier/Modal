@@ -33,7 +33,11 @@ public class Animations : MonoBehaviour
     {
         if (other.collider.tag == "Ground") grounded = true;
     }
-
+     void OnCollisionTrigger(Collision2D other)
+    {
+        if (other.collider.tag == "Ground") grounded = true;
+    }
+    
     void OnCollisionExit2D(Collision2D other)
     {
         if (other.collider.tag == "Ground") grounded = false;
