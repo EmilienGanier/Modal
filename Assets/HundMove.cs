@@ -10,6 +10,7 @@ public class HundMove : MonoBehaviour
     public float speed;
     private bool mustGoBack;
     private bool isWaiting;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +35,13 @@ public class HundMove : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.tag == "WaitPlace") isWaiting = true;
-        if (ither.collider.tag == "Goal") mustGoBack = true;
+        if (other.collider.tag == "Goal") mustGoBack = true;
     }
-    void OncollisionExit2D(Collision2D other)
+    /*void OncollisionExit2D(Collision2D other)
     {
         if (other.collider.tag == "WaitPlace") isWaiting = false;
         if (ither.collider.tag == "Goal") mustGoBack = false;
-    }
+    }*/
 
 
     void ListenTrigger()
@@ -48,7 +49,6 @@ public class HundMove : MonoBehaviour
         if (triggered)
         {
             Attack();
-            animator.SetTrigger("Trigger");
             triggered = false;
         }
     }
@@ -56,11 +56,12 @@ public class HundMove : MonoBehaviour
    
     void Attack()
     {
-        body.velocity.x = speed;
+       // body.velocity.x = speed;
+        animator.SetBool("Trigger", true);
     }
 
     void ListenStop()
     {
-
+        if (isWaiting) { }
     }
 }
