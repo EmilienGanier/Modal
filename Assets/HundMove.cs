@@ -27,14 +27,14 @@ public class HundMove : MonoBehaviour
              theScale.x *= -1;
              transform.localScale = theScale;
         }
-        vSpeed = new Vector2(0, 0);
+        vSpeed = new Vector2(speed, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ListenTrigger();
-        ListenStop();
+       // ListenTrigger();
+       // ListenStop();
         test();
     }
 
