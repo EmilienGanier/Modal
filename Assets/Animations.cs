@@ -57,7 +57,6 @@ public class Animations : MonoBehaviour
     }
     void ChangeDirection()
     {
-        //transform.localScale.x *= -1;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
