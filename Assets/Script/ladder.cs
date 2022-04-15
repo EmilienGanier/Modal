@@ -20,7 +20,6 @@ public class ladder : MonoBehaviour
     {
         if (isInRange){
             bolchiMove.isClimbing = true;
-            Debug.Log("bloup");
         }
         else bolchiMove.isClimbing = false;
         
@@ -32,6 +31,7 @@ public class ladder : MonoBehaviour
         if (collision.CompareTag("Ladder")){
             isInRange = true;
             bolchiMove.moveSpeed = normms/5.0f;
+            Debug.Log("True");
         }
     }
 
@@ -39,6 +39,7 @@ public class ladder : MonoBehaviour
         if (collision.CompareTag("Ladder")){
             isInRange = false;
             bolchiMove.moveSpeed = normms;
+            Debug.Log("False");
         }
     }
 }

@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &92265375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -343,11 +344,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220671289}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &220671291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -405,7 +407,7 @@ GameObject:
   - component: {fileID: 307356271}
   - component: {fileID: 307356272}
   m_Layer: 0
-  m_Name: Bolchie old
+  m_Name: Bolchie
   m_TagString: Bolchie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307356264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: -0.51, z: 0}
+  m_LocalPosition: {x: -14.98, y: 6.52, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -622,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &422276240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -765,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &501212867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -920,6 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &658611024
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7576,7 +7581,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 858300420}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dd0f360c0e9771a4b8b4f362314565d4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9787,6 +9792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &911237856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10224,6 +10230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!1 &1629551689
 GameObject:
   m_ObjectHideFlags: 0
@@ -11972,6 +11979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &2012495332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12043,6 +12051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &2074115298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12092,6 +12101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bolchie
       objectReference: {fileID: 0}
+    - target: {fileID: 840800965589013924, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -12110,11 +12123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.17
+      value: -17.04
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.63
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12158,11 +12171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5347198347597035650, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5347198347597035650, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1705109161
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7117819821921782419, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_Mass
@@ -12219,6 +12232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ddc0d1e6d5994bb2451f74b1abe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!61 &2100855295
 BoxCollider2D:
   m_ObjectHideFlags: 0
