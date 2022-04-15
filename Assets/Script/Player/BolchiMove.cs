@@ -56,26 +56,27 @@ public class BolchiMove : MonoBehaviour
         if (other.collider.tag == "Ground") grounded = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Mirror")) inMirror = true;
-        if (collision.CompareTag("Start"))
-        {
-            SceneManager.LoadScene("Level 1");
-            Debug.Log("uegyflaiu");
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+        //if (collision.CompareTag("Mirror")) inMirror = true;
+        //if (collision.CompareTag("Start"))
+        //{
+          //  SceneManager.LoadScene("Level 1");
+            //Debug.Log("uegyflaiu");
+        //}
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Mirror") inMirror = false;
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+      //  if (collision.tag == "Mirror") inMirror = false;
+    //}
 
 
     // OTHER
     private void Move(float _verticalmovement) {
         if (Input.GetButtonDown("EnterMirror") && inMirror)
         {
+            Debug.Log("je suis la");
             mirror = !mirror;
         }
         int moving = 0;
