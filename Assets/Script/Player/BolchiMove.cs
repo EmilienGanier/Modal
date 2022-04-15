@@ -103,6 +103,10 @@ public class BolchiMove : MonoBehaviour
             Vector3 targetVelocity = new Vector2(body.velocity.x, _verticalmovement);
             body.velocity = Vector3.SmoothDamp(body.velocity, targetVelocity, ref velocity, .05f);
         }
+
+        // Pour debug quand bolchie "glisse"
+
+        if (Input.GetButtonDown("Debug")) body.position = new Vector2(body.position.x, body.position.y + 0.1f);
     }
 
 

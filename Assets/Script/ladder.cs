@@ -18,11 +18,14 @@ public class ladder : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         if (isInRange){
             bolchiMove.isClimbing = true;
             Debug.Log("bolchiMove.isClimbing = true;");
         }
         else bolchiMove.isClimbing = false;
+        //Debug.Log("bolchiMove.isClimbing = false;");
+        */
         
         
     }
@@ -30,15 +33,17 @@ public class ladder : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collision){
         if (collision.CompareTag("Ladder")){
-            isInRange = true;
-            bolchiMove.moveSpeed = normms/5.0f;
+            //isInRange = true;
+            bolchiMove.isClimbing = true;
+            if (!Input.GetButton("MoveRight") && !Input.GetButton("MoveLeft")) bolchiMove.moveSpeed = normms/5.0f;
             Debug.Log("True");
         }
     }
 
     private void OnTriggerExit2D (Collider2D collision){
         if (collision.CompareTag("Ladder")){
-            isInRange = false;
+            //isInRange = false;
+            bolchiMove.isClimbing = false;
             bolchiMove.moveSpeed = normms;
             Debug.Log("False");
         }
