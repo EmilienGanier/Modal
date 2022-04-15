@@ -46,11 +46,7 @@ public class BolchiMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.collider.tag == "Ground") grounded = true;
-        if (other.collider.tag == "Start")
-        {
-            SceneManager.LoadScene("Level 1");
-            Debug.Log("uegyflaiu");
-        }
+        
     }
 
     void OnCollisionExit2D(Collision2D other) {
@@ -60,6 +56,11 @@ public class BolchiMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Mirror")) inMirror = true;
+        if (collision.CompareTag("Start"))
+        {
+            SceneManager.LoadScene("Level 1");
+            Debug.Log("uegyflaiu");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
