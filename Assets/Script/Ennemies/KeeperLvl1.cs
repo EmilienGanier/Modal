@@ -15,7 +15,7 @@ public class KeeperLvl1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Place(bolchiPos.position.x, bolchiPos.position.y);
     }

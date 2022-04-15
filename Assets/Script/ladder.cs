@@ -16,10 +16,11 @@ public class ladder : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isInRange){
             bolchiMove.isClimbing = true;
+            Debug.Log("bolchiMove.isClimbing = true;");
         }
         else bolchiMove.isClimbing = false;
         

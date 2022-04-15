@@ -34,9 +34,10 @@ public class BolchiMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {        
-        verticalmovement = Input.GetAxis("Vertical") * climbSpeed * Time.deltaTime;
+        verticalmovement = Input.GetAxis("Vertical") * climbSpeed * Time.fixedDeltaTime;
+    
         if (isClimbing) Debug.Log("isClimbing");
 
         Move(verticalmovement);
@@ -45,11 +46,13 @@ public class BolchiMove : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.tag == "Ground") grounded = true;
+        if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
+        Debug.Log(other.GetContact(0).normal);
         
     }
 
     void OnCollisionExit2D(Collision2D other) {
+
         if (other.collider.tag == "Ground") grounded = false;
     }
 
