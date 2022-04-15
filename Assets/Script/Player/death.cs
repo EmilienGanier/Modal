@@ -29,6 +29,7 @@ public class death : MonoBehaviour
     void Death(){
         Debug.Log("Vous êtes mort !");
         body.position = checkpoint;
+        body.velocity = new Vector2(0.0f, 0.0f);
         isAlive = true;
     }
 }

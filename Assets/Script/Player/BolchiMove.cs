@@ -16,7 +16,7 @@ public class BolchiMove : MonoBehaviour
 
     private Vector2 direction;
     public bool grounded;
-    public bool isClimbing = false;
+    public bool isClimbing;
 
 
     public bool mirror;
@@ -31,6 +31,7 @@ public class BolchiMove : MonoBehaviour
     void Start()
     {
         direction = new Vector2(0, 0);
+        isClimbing = false;
     }
 
     // Update is called once per frame
@@ -47,7 +48,6 @@ public class BolchiMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
-        Debug.Log(other.GetContact(0).normal);
         
     }
 
