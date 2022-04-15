@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class StoneMirror : MonoBehaviour
 {
+    private BolchiMove bolchieMove;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        bolchieMove = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<BolchiMove>();
     }
 
     // Update is called once per frame
@@ -18,12 +20,8 @@ public class StoneMirror : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Mirror")) inMirror = true;
+        if (collision.CompareTag("Mirror")) bolchieMove.inMirror = true;
       
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Mirror") inMirror = false;
-    }
 }
