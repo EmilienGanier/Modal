@@ -25,30 +25,32 @@ public class LaunchHund : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Collider>().tag == "Bolchie" && !alreadyTriggered)
+        if (other.tag == "Bolchie" && !alreadyTriggered)
         {
             triggerHund = true;
             alreadyTriggered = true;
+            Debug.Log("OK");
         }
 
-        if (other.GetComponent<Collider>().tag == "Bolchie" && alreadyTriggered)
+        /*if (other.tag == "Bolchie" && alreadyTriggered)
         {
             triggerHund = false;
-        }
+        }*/
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<Collider>().tag == "Bolchie")
+        if (other.tag == "Bolchie")
         {
             alreadyTriggered = false;
+            Debug.Log("On est sorti");
         }
     }
     void ListenHund()
     {
-        /*if (hundMove.triggered)
+        if (hundMove.triggered)
         {
             triggerHund = false;
-        }*/
+        }
     }
 }

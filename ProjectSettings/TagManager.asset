@@ -15,6 +15,7 @@ TagManager:
   - Start
   - Ladder
   - Stone
+  - Hund
   layers:
   - Default
   - TransparentFX

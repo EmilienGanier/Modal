@@ -69,13 +69,13 @@ public class HundMove : MonoBehaviour
     {
         if (launchHund.triggerHund)
         {
-            //triggered = true;
+            triggered = true;
             //if (Input.GetButton("EnterMirror")) triggered = true;
-            //if (triggered)
-            //{
+            if (triggered)
+            {
                 Attack();
-             //   triggered = false;
-            //}
+                triggered = false;
+            }
         }
     }
 
