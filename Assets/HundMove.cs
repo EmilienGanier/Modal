@@ -9,12 +9,18 @@ public class HundMove : MonoBehaviour
     public float speed;
     private Vector2 vSpeed;
 
+    //private LaunchMove launchMove;
+
     public bool triggered;
     private bool mustGoBack;
     private bool isWaiting;
     private bool wasAlreadyWaiting;
     public Animator animator;
 
+    void Awake()
+    {
+        //launchMove = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchMove>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +53,7 @@ public class HundMove : MonoBehaviour
     {
         if (other.collider.tag == "WaitingPlace") isWaiting = true;
         if (other.collider.tag == "Goal") mustGoBack = true;
+        //if (other==goal) mustGoBack = true;
     }
     void OnCollisionExit2D(Collision2D other)
     {
@@ -60,8 +67,8 @@ public class HundMove : MonoBehaviour
 
     void ListenTrigger()
     {
-        //triggered = ????
-        if (Input.GetButton("EnterMirror")) triggered = true;
+        //if (LaunchHund.triggerHund) triggered = true;
+        //if (Input.GetButton("EnterMirror")) triggered = true;
         if (triggered)
         {
             Attack();
