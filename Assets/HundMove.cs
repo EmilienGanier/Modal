@@ -13,7 +13,7 @@ public class HundMove : MonoBehaviour
     private bool mustGoBack;
     private bool isWaiting;
     private bool wasAlreadyWaiting;
-    private Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -72,28 +72,36 @@ public class HundMove : MonoBehaviour
    
     void Attack()
     {
-       vSpeed.x = speed;
-        //animator.SetTrigger("Trigger");
+        //animator.SetTrigger("Triggered");
+        animator.SetBool("Wait", false);
+        animator.SetBool("Trigger", true);
+        Debug.Log("Trigger");
+        vSpeed.x = speed;
     }
 
     void ListenStop()
     {
         if (isWaiting && !wasAlreadyWaiting) {
+            //animator.SetTrigger("MustWait");
+            animator.SetBool("Wait", true);
+            Debug.Log("Wait");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = 0;
-            //animator.SetTrigger("MustWait");
             wasAlreadyWaiting = true;
             
         }
+ 
         else if (mustGoBack)
         {
+            //animator.SetTrigger("MustGoback");
+            animator.SetBool("Trigger", false);
+            Debug.Log("GoBack");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
-            vSpeed.x = -speed;
-            //animator.SetTrigger("GoBack");
+            vSpeed.x = -0.7f*speed;
             mustGoBack = false;
         }
     }
