@@ -14,6 +14,7 @@ TagManager:
   - WaitingPlace
   - Start
   - Ladder
+  - Stone
   layers:
   - Default
   - TransparentFX
