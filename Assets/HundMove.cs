@@ -9,7 +9,7 @@ public class HundMove : MonoBehaviour
     public float speed;
     private Vector2 vSpeed;
 
-    //private LaunchMove launchMove;
+    private LaunchHund launchHund;
 
     public bool triggered;
     private bool mustGoBack;
@@ -19,7 +19,7 @@ public class HundMove : MonoBehaviour
 
     void Awake()
     {
-        //launchMove = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchMove>();
+        launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
     }
     // Start is called before the first frame update
     void Start()
@@ -67,12 +67,15 @@ public class HundMove : MonoBehaviour
 
     void ListenTrigger()
     {
-        //if (LaunchHund.triggerHund) triggered = true;
-        //if (Input.GetButton("EnterMirror")) triggered = true;
-        if (triggered)
+        if (launchHund.triggerHund)
         {
-            Attack();
-            triggered = false;
+            //triggered = true;
+            //if (Input.GetButton("EnterMirror")) triggered = true;
+            //if (triggered)
+            //{
+                Attack();
+             //   triggered = false;
+            //}
         }
     }
 
