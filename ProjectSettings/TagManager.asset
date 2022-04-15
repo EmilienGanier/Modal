@@ -15,7 +15,11 @@ TagManager:
   - Start
   - Ladder
   - Stone
+<<<<<<< Updated upstream
   - Hund
+=======
+  - Chest
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
