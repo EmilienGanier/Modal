@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 135377130}
   m_Layer: 9
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135377125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: 1.95, z: 0}
+  m_LocalPosition: {x: -15.64, y: -2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 449025656}
   - component: {fileID: 449025654}
   - component: {fileID: 449025657}
+  - component: {fileID: 449025658}
   m_Layer: 7
   m_Name: Mirror
   m_TagString: Mirror
@@ -519,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449025653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.75, y: -2.11, z: 0}
+  m_LocalPosition: {x: -14.5, y: -1.97, z: 0}
   m_LocalScale: {x: 0.2, y: 0.15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -549,6 +550,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &449025658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449025653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370b5829068f2544d9ced9e87a9d0a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464162334
 GameObject:
   m_ObjectHideFlags: 0
