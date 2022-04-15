@@ -17,12 +17,12 @@ public class ChangeScene_StartToLevel1 : MonoBehaviour
         
     }
 
-    /*void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Collider>().tag == "Bolchie")
         {
             SceneManager.LoadScene("Level 1");
             Debug.Log("uegyflaiu");
         }
-    }*/
+    }
 }
