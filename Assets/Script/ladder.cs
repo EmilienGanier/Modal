@@ -5,7 +5,7 @@ using UnityEngine;
 public class ladder : MonoBehaviour
 {
 
-    private bool isInRange;
+    public bool isInRange;
     private BolchiMove bolchiMove;
     float normms;
     // Start is called before the first frame update
@@ -20,8 +20,10 @@ public class ladder : MonoBehaviour
     {
         if (isInRange){
             bolchiMove.isClimbing = true;
+            Debug.Log("bloup");
         }
         else bolchiMove.isClimbing = false;
+        
         
     }
 

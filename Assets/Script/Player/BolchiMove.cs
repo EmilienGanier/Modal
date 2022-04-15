@@ -37,6 +37,7 @@ public class BolchiMove : MonoBehaviour
     void Update()
     {        
         verticalmovement = Input.GetAxis("Vertical") * climbSpeed * Time.deltaTime;
+        if (isClimbing) Debug.Log("isClimbing");
 
         Move(verticalmovement);
         Jump();
@@ -132,32 +133,5 @@ public class BolchiMove : MonoBehaviour
 
 
 
-/*
 
-    private void ListenMove() {
-        if (Input.GetButton("MoveLeft"))
-            OnNewInput(Vocabulary.input_type.MoveLeft); // Move left.
-        if (Input.GetButton("MoveRight"))
-            Send(Vocabulary.input_type.MoveRight); // Move right.
-        if (!Input.GetButton("MoveRight") && !Input.GetButton("MoveLeft")
-            || Input.GetButton("MoveRight") && Input.GetButton("MoveLeft")) // Stop.
-            Send(Vocabulary.input_type.MoveStop);
-    }
-
-    private void MoveRequest(Vocabulary.input_type type) {
-        if (ignore) return;
-        switch (type) { // Set direction according to input type.
-            case Vocabulary.input_type.MoveLeft : direction = Vector2.left; break;
-            case Vocabulary.input_type.MoveRight : direction = Vector2.right; break;
-            case Vocabulary.input_type.MoveStop : direction = Vector2.zero; break;
-        }
-        Move(speed);
-    }
-
-    private void Move(float intensity) {
-        if (direction == Vector2.zero) body.velocity = Vector2.zero;
-        body.velocity = direction * intensity;
-        curve_debug_velocity.AddKey(
-            new Keyframe(Time.time, body.velocity.x));
-    }*/
 
