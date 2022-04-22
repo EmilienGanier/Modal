@@ -12,6 +12,7 @@ public class HundMove : MonoBehaviour
     public LaunchHund launchHund;
 
     public bool triggered;
+    private bool alreadyTriggered = false;
     private bool mustGoBack;
     private bool isWaiting;
     private bool wasAlreadyWaiting;
@@ -52,11 +53,11 @@ public class HundMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "WaitingPlace") isWaiting = true;
-        if (other.collider.tag == "Goal") mustGoBack = true;
+        //if (other.collider.tag == "WaitingPlace") isWaiting = true;
+        //if (other.collider.tag == "Goal") mustGoBack = true;
         //if (other==goal) mustGoBack = true;
     }
-    void OnCollisionExit2D(Collision2D other)
+    /*void OnCollisionExit2D(Collision2D other)
     {
         if (other.collider.tag == "WaitingPlace")
         {
@@ -64,6 +65,25 @@ public class HundMove : MonoBehaviour
             wasAlreadyWaiting = false;
         }
        // if (other.collider.tag == "Goal") mustGoBack = false;
+    }*/
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Goal")
+        {
+            mustGoBack = true;
+            //Debug.Log("fait-il demi-tour ??");
+        }
+        if (other.tag == "WaitingPlace") isWaiting = true;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "WaitingPlace")
+        {
+            isWaiting = false;
+            wasAlreadyWaiting = false;
+        }
     }
 
     void ListenTrigger()
@@ -72,10 +92,12 @@ public class HundMove : MonoBehaviour
         {
             triggered = true;
             //if (Input.GetButton("EnterMirror")) triggered = true;
-            if (triggered)
+            if (triggered && !alreadyTriggered)
             {
                 Attack();
+                alreadyTriggered = true;
                 triggered = false;
+                //Debug.Log("triggered =" + triggered);
             }
         }
     }
@@ -86,7 +108,7 @@ public class HundMove : MonoBehaviour
         //animator.SetTrigger("Triggered");
         animator.SetBool("Wait", false);
         animator.SetBool("Trigger", true);
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
         vSpeed.x = speed;
     }
 
@@ -95,25 +117,26 @@ public class HundMove : MonoBehaviour
         if (isWaiting && !wasAlreadyWaiting) {
             //animator.SetTrigger("MustWait");
             animator.SetBool("Wait", true);
-            Debug.Log("Wait");
+            //Debug.Log("Wait");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = 0;
             wasAlreadyWaiting = true;
-            
+            alreadyTriggered = false;
         }
  
         else if (mustGoBack)
         {
             //animator.SetTrigger("MustGoback");
             animator.SetBool("Trigger", false);
-            Debug.Log("GoBack");
+            //Debug.Log("GoBack");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = -0.7f*speed;
             mustGoBack = false;
+            
         }
     }
 }

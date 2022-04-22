@@ -6,11 +6,11 @@ public class LaunchHund : MonoBehaviour
 {
     public bool triggerHund = false;
     private bool alreadyTriggered = false;
-    private HundMove hundMove;
+    public HundMove hundMove;
 
     void Awake()
     {
-        hundMove = GameObject.FindGameObjectWithTag("Hund").GetComponent<HundMove>();
+        //hundMove = GameObject.FindGameObjectWithTag("Hund").GetComponent<HundMove>();
     }
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class LaunchHund : MonoBehaviour
         {
             triggerHund = true;
             alreadyTriggered = true;
-            Debug.Log("OK");
+            //Debug.Log("OK");
         }
 
         /*if (other.tag == "Bolchie" && alreadyTriggered)
@@ -43,7 +43,7 @@ public class LaunchHund : MonoBehaviour
         if (other.tag == "Bolchie")
         {
             alreadyTriggered = false;
-            Debug.Log("On est sorti");
+            //Debug.Log("On est sorti");
         }
     }
     void ListenHund()
@@ -51,6 +51,7 @@ public class LaunchHund : MonoBehaviour
         if (hundMove.triggered)
         {
             triggerHund = false;
+            //Debug.Log("triggerHund = " + triggerHund);
         }
     }
 }
