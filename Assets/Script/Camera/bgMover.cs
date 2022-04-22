@@ -12,6 +12,7 @@ public class bgMover : MonoBehaviour
     private float scale;
     public Camera cam;
     private float zoom;
+    public float baseZoom;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class bgMover : MonoBehaviour
     void Update()
     {
         zoom = cam.orthographicSize;
-        transform.localScale = new Vector3(0.9f*zoom/4.0f, 0.9f*zoom/4.0f, 0.9f*zoom/4.0f);
+        transform.localScale = new Vector3(baseZoom*zoom/4.0f, baseZoom*zoom/4.0f, baseZoom*zoom/4.0f);
 
 
         delta =body.position - transform.position;
