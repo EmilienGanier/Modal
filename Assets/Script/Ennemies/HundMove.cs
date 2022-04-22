@@ -9,17 +9,18 @@ public class HundMove : MonoBehaviour
     public float speed;
     private Vector2 vSpeed;
 
-    private LaunchHund launchHund;
+    public LaunchHund launchHund;
 
     public bool triggered;
     private bool mustGoBack;
     private bool isWaiting;
     private bool wasAlreadyWaiting;
     public Animator animator;
+   
 
     void Awake()
     {
-        launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
+        //launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
     }
     // Start is called before the first frame update
     void Start()
