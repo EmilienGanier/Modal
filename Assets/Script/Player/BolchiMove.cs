@@ -47,8 +47,8 @@ public class BolchiMove : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
-        
+        //if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
+        if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] > 0.0f) grounded = true;
     }
 
     void OnCollisionExit2D(Collision2D other) {
