@@ -43,7 +43,8 @@ public class LaunchHund : MonoBehaviour
         if (other.tag == "Bolchie")
         {
             alreadyTriggered = false;
-            //Debug.Log("On est sorti");
+            Debug.Log("On est sorti");
+            Debug.Log("triggerHund =" + triggerHund);
         }
     }
     void ListenHund()

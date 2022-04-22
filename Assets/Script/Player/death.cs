@@ -5,8 +5,16 @@ using UnityEngine;
 public class death : MonoBehaviour
 {
     public bool isAlive = true;
+   
     public Vector3 checkpoint =  new Vector3(-2.5f, -0.5f, 0.0f);
     public Rigidbody2D body;
+
+    void Awake()
+    {
+        
+        
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +38,6 @@ public class death : MonoBehaviour
         Debug.Log("Vous êtes mort !");
         body.position = checkpoint;
         body.velocity = new Vector2(0.0f, 0.0f);
-        isAlive = true;
+        //isAlive = true;
     }
 }

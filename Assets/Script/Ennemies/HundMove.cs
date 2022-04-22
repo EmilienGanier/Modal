@@ -8,8 +8,11 @@ public class HundMove : MonoBehaviour
     public bool goRight;
     public float speed;
     private Vector2 vSpeed;
+    public Vector3 respawn_point;
 
+    private death Death;
     public LaunchHund launchHund;
+    //public hasRespawn = false;
 
     public bool triggered;
     private bool alreadyTriggered = false;
@@ -22,6 +25,8 @@ public class HundMove : MonoBehaviour
     void Awake()
     {
         //launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
+        Death = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<death>();
+        respawn_point = body.position;
     }
     // Start is called before the first frame update
     void Start()
@@ -43,9 +48,10 @@ public class HundMove : MonoBehaviour
     void Update()
     {
         //vSpeed.y = 0;
+        ListenBolchie();
         ListenTrigger();
         ListenStop();
-        body.velocity = vSpeed;
+        body.velocity = vSpeed;  
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -99,7 +105,26 @@ public class HundMove : MonoBehaviour
         }
     }
 
-   
+    void ListenBolchie()
+    {
+        if (!Death.isAlive)
+        {
+            body.position = respawn_point;
+            vSpeed = new Vector2(0f, 0f);
+            animator.SetBool("Trigger", false);
+            animator.SetBool("Wait", true);
+            triggered = false;
+            alreadyTriggered = false;
+            isWaiting = true;
+            wasAlreadyWaiting = true;
+            mustGoBack = false;
+            Debug.Log("yess");
+            //hasRespawn = true;
+        }
+        
+    }
+
+
     void Attack()
     {
         //animator.SetTrigger("Triggered");
