@@ -30,14 +30,11 @@ public class HundMove : MonoBehaviour
         isWaiting = false;
         wasAlreadyWaiting = false;
         mustGoBack = false;
-        Vector3 theScale = transform.localScale;
+        /*Vector3 theScale = transform.localScale;
         theScale.x *= -1;
-        transform.localScale = theScale;
+        transform.localScale = theScale;*/
         if (!goRight){
              speed = -speed;
-             Vector3 theScale2 = transform.localScale;
-             theScale2.x *= -1;
-             transform.localScale = theScale2;
         }
         vSpeed = new Vector2(0, 0);
     }
