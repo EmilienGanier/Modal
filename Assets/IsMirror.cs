@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class IsMirror : MonoBehaviour
 {
+    string message = "Press ENTER";
+    float displayTime = 1;
+    bool displayMessage = false;
     private BolchiMove bolchieMove;
     private bool stoneMirror;
     private bool bolchieMirror;
@@ -17,7 +20,10 @@ public class IsMirror : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (displayMessage && stoneMirror)
+        {
+            displayTime -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,13 +32,33 @@ public class IsMirror : MonoBehaviour
         {
             bolchieMove.inMirror = true;
             bolchieMirror = true;
+
+            //if (displayTime <= 0)
+            //{
+            //  displayMessage = false;
+            //}
+            //else
+            //{
+            //  displayMessage = true;
+            //}
+            displayMessage = true;
         }
 
         if (collision.CompareTag("Stone"))
         {
             bolchieMove.inMirror = true;
             stoneMirror = true;
+            if (displayTime <= 0)
+            {
+                displayMessage = false;
+            }
+            else
+            {
+                displayMessage = true;
+            }
         }
+
+
 
     }
 
@@ -47,7 +73,16 @@ public class IsMirror : MonoBehaviour
         {
             bolchieMove.inMirror = false;
             bolchieMirror = false;
+            displayMessage = false;
         }
 
+    }
+
+    private void OnGUI()
+    {
+        if (displayMessage)
+        {
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), message);
+        }
     }
 }

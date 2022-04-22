@@ -76,8 +76,12 @@ public class BolchiMove : MonoBehaviour
     private void Move(float _verticalmovement) {
         if (Input.GetButtonDown("EnterMirror") && inMirror)
         {
-            Debug.Log("je suis la");
+            Debug.Log("je vois un input dans le miroir");
             mirror = !mirror;
+        }
+        if (Input.GetButtonDown("EnterMirror") && !inMirror)
+        {
+          Debug.Log("je vois un input hors du miroir");
         }
         int moving = 0;
         if (Input.GetButton("MoveRight") && !mirror) {

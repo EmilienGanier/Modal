@@ -19,11 +19,10 @@ public class MirrorPlatform : MonoBehaviour
         this.GetComponent<BoxCollider2D>().enabled = false;
         gameObject.tag = "MirrorPlatform";
         gameObject.layer = LayerMask.NameToLayer("MirrorPlatform");
-        Debug.Log("Salut, je suis la");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (bolchieMove.mirror)
         {
@@ -31,7 +30,6 @@ public class MirrorPlatform : MonoBehaviour
             this.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.tag = "Ground";
             gameObject.layer = LayerMask.NameToLayer("ground");
-            Debug.Log("Coucou je change le sprite et le bocxollider");
         }
         else
         {

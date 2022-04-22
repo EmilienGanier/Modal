@@ -15,14 +15,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bolchie
   - Water
   - UI
   - ground
-  - 
-  - 
-  - 
-  - 
+  - MirrorPlatform
+  - BolchieMirror
+  - GroundMirror
+  - Stone
   - 
   - 
   - 
