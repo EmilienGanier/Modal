@@ -46,6 +46,11 @@ public class BolchiMove : MonoBehaviour
         //grounded = false;
     }
 
+    private void Update()
+    {
+        CheckInput();
+    }
+
     void OnCollisionEnter2D(Collision2D other) {
         //if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
         if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] > 0.0f) grounded = true;
@@ -73,16 +78,19 @@ public class BolchiMove : MonoBehaviour
 
 
     // OTHER
-    private void Move(float _verticalmovement) {
+
+    private void CheckInput() {
+
+
         if (Input.GetButtonDown("EnterMirror") && inMirror)
         {
-            Debug.Log("je vois un input dans le miroir");
             mirror = !mirror;
+
         }
-        if (Input.GetButtonDown("EnterMirror") && !inMirror)
-        {
-          Debug.Log("je vois un input hors du miroir");
-        }
+
+    }
+    private void Move(float _verticalmovement) {
+  
         int moving = 0;
         if (Input.GetButton("MoveRight") && !mirror) {
             direction.x = Math.Max(direction.x, 1);
