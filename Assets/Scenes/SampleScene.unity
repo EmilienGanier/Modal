@@ -290,7 +290,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1106,11 +1106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.73
+      value: -4.93
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1183,7 +1183,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1203,7 +1203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 7b1c31f31e66cc749a38570c19242ace, type: 3}
   m_Color: {r: 0.49056602, g: 0.4705114, b: 0.47131446, a: 1}
   m_FlipX: 0
