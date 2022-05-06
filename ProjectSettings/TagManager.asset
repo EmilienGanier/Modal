@@ -15,6 +15,7 @@ TagManager:
   - Goal
   - Start
   - Ladder
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

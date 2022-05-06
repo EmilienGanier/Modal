@@ -38,6 +38,9 @@ public class death : MonoBehaviour
         if (collision.collider.CompareTag("Ennemy")){
             isAlive = false;
         }
+        if (collision.collider.CompareTag("Checkpoint")){
+            
+        }
     }
 
 
