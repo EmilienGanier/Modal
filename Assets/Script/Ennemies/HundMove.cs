@@ -107,7 +107,7 @@ public class HundMove : MonoBehaviour
 
     void ListenBolchie()
     {
-        if (!Death.isAlive)
+        if (Death.dead)
         {
             body.position = respawn_point;
             vSpeed = new Vector2(0f, 0f);
