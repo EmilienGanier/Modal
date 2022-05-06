@@ -9,9 +9,11 @@ public class respawn_titleScene : MonoBehaviour
     public bool isAlive = true;
     public Rigidbody2D body;
 
+    public AudioSource fall;
+
     void Start()
     {
-        
+  
     }
 
     // Update is called once per frame
@@ -22,10 +24,13 @@ public class respawn_titleScene : MonoBehaviour
     }
      void listenDeath()
     {
-        if (body.position.y < -30.0f) isAlive = false;
+        if (body.position.y > -2.0f && fall.isPlaying) fall.Pause();
+        if (body.position.y < -2.0f && !fall.isPlaying) fall.Play();
+        if (body.position.y < -50.0f) isAlive = false;
     }
     void Death()
     {
+        fall.Pause();
         body.position = respawn;
         body.velocity = new Vector2(0.0f, 0.0f);
         isAlive = true;
