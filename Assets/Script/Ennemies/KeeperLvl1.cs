@@ -29,7 +29,7 @@ public class KeeperLvl1 : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.tag == "Ground") notBlocked = false;
+        if (other.collider.CompareTag("Ground")) notBlocked = false;
         
     }
 }
