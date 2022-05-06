@@ -16,6 +16,7 @@ TagManager:
   - Start
   - Ladder
   - Checkpoint
+  - Enigme2
   layers:
   - Default
   - TransparentFX

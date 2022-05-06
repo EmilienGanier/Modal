@@ -39,7 +39,13 @@ public class death : MonoBehaviour
             isAlive = false;
         }
         if (collision.collider.CompareTag("Checkpoint")){
-            
+            checkpoint = new Vector3(-25.0f, 25.0f, 0.0f);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        if (collider.CompareTag("Checkpoint")){
+            checkpoint = new Vector3(-25.0f, 25.0f, 0.0f);
         }
     }
 

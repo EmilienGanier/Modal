@@ -28,6 +28,5 @@ public class respawn_hund : MonoBehaviour
     {
         if (!Death.isAlive) body.position = respawn_point;
         //body.velocity = new Vector2(0f, 0f);
-        Debug.Log("yes");
     }
 }
