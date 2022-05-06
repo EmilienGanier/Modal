@@ -1,29 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chest : MonoBehaviour
 {
     bool isChest;
-    bolchieHit bolchiehit;
-    public SpriteRenderer spriteRenderer;
-    public Sprite closed;
-    public Sprite opened;
 
     // Start is called before the first frame update
     void Awake()
     {
-        bolchiehit = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<bolchieHit>();
-        this.GetComponent<SpriteRenderer>().sprite = closed;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isChest && Input.GetButtonDown("EnterMirror"))
+        if (isChest)
         {
-            bolchiehit.hasBatte = true;
-            this.GetComponent<SpriteRenderer>().sprite = opened;
+            this.gameObject.transform.Translate(2.57f, 2.73f, 0.2f);
         }
         
     }
@@ -33,11 +28,12 @@ public class Chest : MonoBehaviour
         if (collision.CompareTag("Bolchie"))
         {
             isChest = true;
+            SceneManager.LoadScene("Final Scene and Replay");
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+            private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Bolchie"))
         {

@@ -11,6 +11,10 @@ TagManager:
   - Mirror
   - Ground
   - MirrorPlatform
+  - WaitingPlace
+  - Goal
+  - Start
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - BolchieMirror
   - GroundMirror
   - Stone
-  - 
+  - Door
   - 
   - 
   - 
