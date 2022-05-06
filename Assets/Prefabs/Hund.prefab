@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5830894183518937926}
   - component: {fileID: 3916035034391307541}
   - component: {fileID: 523969742136875811}
-  - component: {fileID: 7674190281989068165}
   m_Layer: 0
   m_Name: Hund
   m_TagString: Ennemy
@@ -99,6 +98,7 @@ MonoBehaviour:
   body: {fileID: 4713160383866929529}
   goRight: 0
   speed: 1
+  respawn_point: {x: 0, y: 0, z: 0}
   launchHund: {fileID: 0}
   triggered: 0
   animator: {fileID: 523969742136875811}
@@ -174,17 +174,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7674190281989068165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544949926603816374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec206348e1682d40917593ab744fcfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn_point: {x: 0, y: 0, z: 0}
-  body: {fileID: 4713160383866929529}

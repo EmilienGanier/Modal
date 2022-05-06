@@ -26,7 +26,7 @@ public class HundMove : MonoBehaviour
     {
         //launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
         Death = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<death>();
-        respawn_point = body.position;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,7 @@ public class HundMove : MonoBehaviour
              speed = -speed;
         }
         vSpeed = new Vector2(0, 0);
+        respawn_point = body.position;
     }
 
     // Update is called once per frame
