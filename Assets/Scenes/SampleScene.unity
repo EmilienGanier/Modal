@@ -548,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 1
   checkpoint: {x: -2.5, y: -0.5, z: 0}
-  body: {fileID: 0}
+  body: {fileID: 1155604299}
 --- !u!1001 &1199500490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1213,6 +1213,10 @@ PrefabInstance:
     - target: {fileID: 1990102551960485752, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117819821921782419, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
