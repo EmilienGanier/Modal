@@ -2984,7 +2984,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7278288547522696, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: jumpForce
-      value: 1200
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 7278288547522696, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
       propertyPath: moveSpeed
@@ -3078,6 +3078,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7117819821921782419, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: dd0f360c0e9771a4b8b4f362314565d4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3faea9503ca0ee043bce5009dd0774b6, type: 3}
 --- !u!1 &1543610854
@@ -3232,7 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670021179}
   - component: {fileID: 1670021180}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: GroundCollider
   m_TagString: Chest
   m_Icon: {fileID: 0}

@@ -23,12 +23,12 @@ public class IsMirror : MonoBehaviour
         if (displayMessage && stoneMirror)
         {
             displayTime -= Time.deltaTime;
-            Debug.Log(displayTime);
+
         }
         if (displayTime <= 0)
 
         {
-            Debug.Log("Le displayTime est trop petit");
+
             displayMessage = false;
         }
     }
@@ -40,14 +40,7 @@ public class IsMirror : MonoBehaviour
             bolchieMove.inMirror = true;
             bolchieMirror = true;
 
-            //if (displayTime <= 0)
-            //{
-            //  displayMessage = false;
-            //}
-            //else
-            //{
-            //  displayMessage = true;
-            //}
+
             displayMessage = true;
         }
 
@@ -58,12 +51,12 @@ public class IsMirror : MonoBehaviour
             if (displayTime <= 0)
 
             {
-                Debug.Log("Le displayTime est trop petit");
+
                 displayMessage = false;
             }
             else
             {
-                Debug.Log("Je suis la");
+
                 displayMessage = true;
             }
         }
