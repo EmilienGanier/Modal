@@ -11,12 +11,11 @@ public class respawn_hund : MonoBehaviour
     void Awake()
     {
         Death = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<death>();
-        respawn_point = body.position;
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        respawn_point = body.position;
     }
 
     // Update is called once per frame
@@ -28,7 +27,7 @@ public class respawn_hund : MonoBehaviour
     void ListenBolchie()
     {
         if (!Death.isAlive) body.position = respawn_point;
-        body.velocity = new Vector2(0f, 0f);
+        //body.velocity = new Vector2(0f, 0f);
         Debug.Log("yes");
     }
 }

@@ -8,6 +8,9 @@ public class ladder : MonoBehaviour
     public bool isInRange;
     private BolchiMove bolchiMove;
     float normms;
+    string text = "Press up to climb";
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -46,6 +49,16 @@ public class ladder : MonoBehaviour
             bolchiMove.isClimbing = false;
             bolchiMove.moveSpeed = normms;
             Debug.Log("False");
+        }
+    }
+    
+    private void OnGUI()
+    {
+        if (bolchiMove.isClimbing){
+            Vector3 position = Camera.main.WorldToScreenPoint(bolchiMove.transform.position);
+            position = new Vector3(position.x, position.y + 100, position.z);
+            var textSize = GUI.skin.label.CalcSize(new GUIContent(text));
+            GUI.Label(new Rect(position.x - textSize.x/2, Screen.height - position.y, textSize.x, textSize.y), text);
         }
     }
 }
