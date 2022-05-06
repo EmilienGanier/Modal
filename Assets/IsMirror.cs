@@ -11,6 +11,7 @@ public class IsMirror : MonoBehaviour
     private bool stoneMirror;
     private bool bolchieMirror;
 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,6 +32,8 @@ public class IsMirror : MonoBehaviour
 
             displayMessage = false;
         }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -89,4 +92,6 @@ public class IsMirror : MonoBehaviour
             GUI.Label(new Rect(Screen.width / 2, Screen.height / 5, 250f, 250f), message);
         }
     }
+
+
 }

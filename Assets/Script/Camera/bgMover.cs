@@ -10,7 +10,7 @@ public class bgMover : MonoBehaviour
     public float xOffset;
     Vector3 delta;
     private float scale;
-    public Camera cam;
+    public UnityEngine.Camera cam;
     private float zoom;
     public float baseZoom;
 

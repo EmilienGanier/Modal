@@ -55,7 +55,7 @@ public class ladder : MonoBehaviour
     private void OnGUI()
     {
         if (bolchiMove.isClimbing){
-            Vector3 position = Camera.main.WorldToScreenPoint(bolchiMove.transform.position);
+            Vector3 position = UnityEngine.Camera.main.WorldToScreenPoint(bolchiMove.transform.position);
             position = new Vector3(position.x, position.y + 100, position.z);
             var textSize = GUI.skin.label.CalcSize(new GUIContent(text));
             GUI.Label(new Rect(position.x - textSize.x/2, Screen.height - position.y, textSize.x, textSize.y), text);

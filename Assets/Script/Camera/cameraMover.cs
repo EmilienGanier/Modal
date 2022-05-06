@@ -14,7 +14,7 @@ public class cameraMover : MonoBehaviour
 
 
 
-    public Camera cam;
+    public UnityEngine.Camera cam;
     public float speed =8;
 
     private bool toBeZoomed = false;
