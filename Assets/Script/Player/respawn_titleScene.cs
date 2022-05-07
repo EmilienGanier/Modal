@@ -24,7 +24,7 @@ public class respawn_titleScene : MonoBehaviour
     }
      void listenDeath()
     {
-        if (body.position.y < -2.0f && !fall.isPlaying) fall.Play();
+        if (body.position.y < -3.0f && !fall.isPlaying) fall.Play();
         if (body.position.y < -50.0f) isAlive = false;
     }
     void Death()
