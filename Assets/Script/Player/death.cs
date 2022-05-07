@@ -5,6 +5,8 @@ using UnityEngine;
 public class death : MonoBehaviour
 {
     public bool isAlive = true;
+
+    public AudioSource deathSound;
    
     public Vector3 checkpoint =  new Vector3(-2.5f, -0.5f, 0.0f);
     public Rigidbody2D body;
@@ -27,7 +29,11 @@ public class death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isAlive || Input.GetButtonDown("Restart")) Death();
+        if (!isAlive || Input.GetButtonDown("Restart"))
+        {
+            Death();
+            deathSound.Play();
+        }
         if (dead && Time.time-t>3.0f){
             dead = false;
             deathSprite.SetActive(false);
@@ -51,12 +57,14 @@ public class death : MonoBehaviour
 
 
     void Death(){
+        
         Debug.Log("Vous êtes mort !");
         deathSprite.SetActive(true);
         t = Time.time;
         isAlive = true;
         body.position = checkpoint;
         body.velocity = new Vector2(0.0f, 0.0f);
+        
         dead = true;
     }
 
