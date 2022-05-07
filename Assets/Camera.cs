@@ -25,6 +25,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetButtonDown("EnterMirror") && bolchieMove.inMirror)
         {
             //if (Mathf.Abs(360.0f - body.rotation.z) > 1)
@@ -35,6 +36,6 @@ public class Camera : MonoBehaviour
             //body.Rotate(x, y, Mathf.MoveTowardsAngle(body.eulerAngles.z, target, speed * Time.deltaTime));
             while (360.0f - body.rotation.z > 0.2f)
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, target), speed * Time.deltaTime);
-        }
+        }*/
     }
 }
