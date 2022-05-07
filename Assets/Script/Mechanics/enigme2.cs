@@ -20,11 +20,11 @@ public class enigme2 : MonoBehaviour
     void Update()
     {
         if (inRange){
-            if (bolchiMove.transform.position.x < -3.95f){
-                letter = (int)Math.Truncate(bolchiMove.transform.position.x + 16.95f);
+            if (bolchiMove.transform.position.x < -4.0f){
+                letter = (int)Math.Truncate(bolchiMove.transform.position.x + 17.0f);
             }
-            if (bolchiMove.transform.position.x > -0.95f){
-                letter = (int)Math.Truncate(bolchiMove.transform.position.x + 19.95f);
+            if (bolchiMove.transform.position.x > -1.0f){
+                letter = (int)Math.Truncate(bolchiMove.transform.position.x + 14.0f);
             }
         }
     }

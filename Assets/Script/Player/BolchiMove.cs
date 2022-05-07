@@ -133,6 +133,27 @@ public class BolchiMove : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+    //ENIGME 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
