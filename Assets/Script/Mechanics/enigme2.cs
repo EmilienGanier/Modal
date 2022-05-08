@@ -9,6 +9,9 @@ public class enigme2 : MonoBehaviour
     public bool inRange = false;
     private BolchiMove bolchiMove;
 
+    public bool solved = false;
+    public AudioSource success;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +29,12 @@ public class enigme2 : MonoBehaviour
             if (bolchiMove.transform.position.x > -1.0f){
                 letter = (int)Math.Truncate(bolchiMove.transform.position.x + 14.0f);
             }
+        }
+
+        if (solved)
+        {
+            success.Play();
+            solved = false;
         }
     }
 

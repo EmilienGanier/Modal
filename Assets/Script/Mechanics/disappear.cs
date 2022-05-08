@@ -7,6 +7,7 @@ public class disappear : MonoBehaviour
     public bool[] activation = new bool[26];
     public bool[] solution = new bool[] {false, true, false, false, false, false, false, false, false, false, true, true, false, false, true, false, false, false, true, false, false, false, false, false, true, false};
     public GameObject obstacle;
+    public enigme2 enigme;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,10 @@ public class disappear : MonoBehaviour
     void Update()
     {
         if (Compare()){
+            enigme.solved = true;
             Debug.Log("cest fini");
             obstacle.SetActive(false);
+            
         }
     }
 
