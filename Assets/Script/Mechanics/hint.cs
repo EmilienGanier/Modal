@@ -37,7 +37,7 @@ public class hint : MonoBehaviour
     {
         if (hinted){
             Vector3 position = UnityEngine.Camera.main.WorldToScreenPoint(transform.position);
-            position = new Vector3(position.x, position.y + 150, position.z);
+            position = new Vector3(position.x, position.y + 300, position.z);
             var textSize = GUI.skin.label.CalcSize(new GUIContent(text));
             GUI.Label(new Rect(position.x - textSize.x/2, Screen.height - position.y, textSize.x, textSize.y), text);
         }
