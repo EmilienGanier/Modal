@@ -76,7 +76,7 @@ public class IsMirror : MonoBehaviour
             stoneMirror = false;
             displayTime = 1;
         }
-        if (collision.CompareTag("Bolchie") || !stoneMirror)
+        if (collision.CompareTag("Bolchie") && !stoneMirror)
         {
             bolchieMove.inMirror = false;
             bolchieMirror = false;
