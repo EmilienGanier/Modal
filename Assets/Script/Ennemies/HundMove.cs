@@ -12,32 +12,23 @@ public class HundMove : MonoBehaviour
 
     private death Death;
     public LaunchHund launchHund;
-    //public hasRespawn = false;
 
-    public bool triggered;
+    public bool triggered = false;
     private bool alreadyTriggered = false;
-    private bool mustGoBack;
-    private bool isWaiting;
-    private bool wasAlreadyWaiting;
+    private bool mustGoBack = false;
+    private bool isWaiting = false;
+    private bool wasAlreadyWaiting = false;
+
     public Animator animator;
    
 
     void Awake()
     {
-        //launchHund = GameObject.FindGameObjectWithTag("Goal").GetComponent<LaunchHund>();
         Death = GameObject.FindGameObjectWithTag("Bolchie").GetComponent<death>();
-        
     }
     // Start is called before the first frame update
     void Start()
-    {
-        triggered = false;
-        isWaiting = false;
-        wasAlreadyWaiting = false;
-        mustGoBack = false;
-        /*Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;*/
+    { 
         if (!goRight){
              speed = -speed;
         }
@@ -48,35 +39,17 @@ public class HundMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //vSpeed.y = 0;
         ListenBolchie();
         ListenTrigger();
         ListenStop();
         body.velocity = vSpeed;  
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        //if (other.collider.tag == "WaitingPlace") isWaiting = true;
-        //if (other.collider.tag == "Goal") mustGoBack = true;
-        //if (other==goal) mustGoBack = true;
-    }
-    /*void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.collider.tag == "WaitingPlace")
-        {
-            isWaiting = false;
-            wasAlreadyWaiting = false;
-        }
-       // if (other.collider.tag == "Goal") mustGoBack = false;
-    }*/
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Goal")
         {
             mustGoBack = true;
-            //Debug.Log("fait-il demi-tour ??");
         }
         if (other.tag == "WaitingPlace") isWaiting = true;
     }
@@ -95,13 +68,11 @@ public class HundMove : MonoBehaviour
         if (launchHund.triggerHund)
         {
             triggered = true;
-            //if (Input.GetButton("EnterMirror")) triggered = true;
             if (triggered && !alreadyTriggered)
             {
                 Attack();
                 alreadyTriggered = true;
                 triggered = false;
-                //Debug.Log("triggered =" + triggered);
             }
         }
     }
@@ -112,15 +83,15 @@ public class HundMove : MonoBehaviour
         {
             body.position = respawn_point;
             vSpeed = new Vector2(0f, 0f);
+
             animator.SetBool("Trigger", false);
             animator.SetBool("Wait", true);
+
             triggered = false;
             alreadyTriggered = false;
             isWaiting = true;
             wasAlreadyWaiting = true;
             mustGoBack = false;
-            Debug.Log("yess");
-            //hasRespawn = true;
         }
         
     }
@@ -128,19 +99,15 @@ public class HundMove : MonoBehaviour
 
     void Attack()
     {
-        //animator.SetTrigger("Triggered");
         animator.SetBool("Wait", false);
         animator.SetBool("Trigger", true);
-        //Debug.Log("Trigger");
         vSpeed.x = speed;
     }
 
     void ListenStop()
     {
         if (isWaiting && !wasAlreadyWaiting) {
-            //animator.SetTrigger("MustWait");
             animator.SetBool("Wait", true);
-            //Debug.Log("Wait");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
@@ -151,15 +118,12 @@ public class HundMove : MonoBehaviour
  
         else if (mustGoBack)
         {
-            //animator.SetTrigger("MustGoback");
             animator.SetBool("Trigger", false);
-            //Debug.Log("GoBack");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
             vSpeed.x = -0.7f*speed;
             mustGoBack = false;
-            
         }
     }
 }
