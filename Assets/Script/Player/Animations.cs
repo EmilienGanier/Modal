@@ -17,8 +17,6 @@ public class Animations : MonoBehaviour
     {
         grounded = false;
         goRight = true;
-        // Hooks.
-        //transform.parent.GetComponent<MarkThrower>().OnThrow += LaunchThrow;
     }
 
     void Update()
@@ -58,20 +56,5 @@ public class Animations : MonoBehaviour
         transform.localScale = theScale;
         goRight = !goRight;
     }
-
-    void AttackAnim()
-    {
-        //animator.SetBool("Attack" , bolchieHit.instance.attacking);
-    }
-    /*void DeadAnim()
-    {
-        animator.SetBool("Dead" = )
-    }*/
-
-    // HOOKS
-    //private void LaunchThrow()
-    //{
-     //   animator.Play("1-Throw");
-   // }
 
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1322429219293746932}
   - component: {fileID: 7117819821921782419}
   - component: {fileID: 7278288547522696}
-  - component: {fileID: 4658446059450906055}
   - component: {fileID: 5347198347597035650}
   - component: {fileID: 2074049058575159022}
   - component: {fileID: 7955355903939356844}
@@ -109,22 +108,6 @@ MonoBehaviour:
   mirror: 0
   inMirror: 0
   verticalmovement: 0
---- !u!114 &4658446059450906055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840800965589013924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0df6e5a07d15342a37333a65a33806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 7117819821921782419}
-  hasBatte: 0
-  isHitting: 0
-  attacking: 0
 --- !u!212 &5347198347597035650
 SpriteRenderer:
   m_ObjectHideFlags: 0
