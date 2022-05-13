@@ -17,6 +17,7 @@ public class BolchiMove : MonoBehaviour
     private Vector2 direction;
     public bool grounded;
     public bool isClimbing;
+    public bool mured = false;
 
 
     public bool mirror;
@@ -53,7 +54,11 @@ public class BolchiMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         //if (other.collider.tag == "Ground" && other.GetContact(0).normal == new Vector2(0.0f, 1.0f)) grounded = true;
-        if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] > 0.0f) grounded = true;
+        if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] > 0.001f) grounded = true;
+        //if (other.collider.tag == "Ground" && other.GetContact(0).normal[1]/other.GetContact(0).normal[0] > 0.001f) grounded = true;
+        if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] < 0.001f) mured = true;
+        else mured = false;
+        
     }
 
     void OnCollisionExit2D(Collision2D other) {
@@ -124,7 +129,7 @@ public class BolchiMove : MonoBehaviour
 
     private void Jump() {
         if (Input.GetButton("Jump")){
-            if (!grounded){
+            if (!grounded && !mured){
                 body.position = new Vector2(body.position.x, body.position.y + 0.01f);
             }
             if (grounded) {

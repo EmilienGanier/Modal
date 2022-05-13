@@ -19,13 +19,14 @@ public class cameraMover : MonoBehaviour
 
     private bool toBeZoomed = false;
     private float zoom = 6.0f;
+    private float ecart = 4.0f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(body.position.x + xOffset, body.position.y + yOffset, transform.position.z);
+        transform.position = new Vector3(body.position.x + 3 + xOffset, body.position.y + 1 + yOffset, transform.position.z);
         cam.orthographicSize = 8;
 
     }
@@ -39,17 +40,25 @@ public class cameraMover : MonoBehaviour
         }
         if (body.position.x>-7.5f && body.position.x <2.5f){
             zoom = 6;
+            if (Math.Abs(ecart-4.0f)>0.05f){
+                ecart = ecart - 0.02f*Math.Sign(ecart-4.0f);
+            }
         }
-        else zoom = 4;
+        else {
+            zoom = 4;
+            if (Math.Abs(ecart-2.0f)>0.05f){
+                ecart = ecart - 0.02f*Math.Sign(ecart-2.0f);
+            }
+        }
 
 
         //scrolling camera
         delta =body.position - transform.position;
         if (delta.x>2) {
-            transform.position = new Vector3(body.position.x -2, transform.position.y + yOffset, transform.position.z);
+            transform.position = new Vector3(body.position.x -ecart, transform.position.y + yOffset, transform.position.z);
         }
         if (delta.x<-2) {
-            transform.position = new Vector3(body.position.x +2, transform.position.y + yOffset, transform.position.z);
+            transform.position = new Vector3(body.position.x +ecart, transform.position.y + yOffset, transform.position.z);
         }
         if (delta.y>1) {
             transform.position = new Vector3(transform.position.x + xOffset, body.position.y - 1 + yOffset, transform.position.z);

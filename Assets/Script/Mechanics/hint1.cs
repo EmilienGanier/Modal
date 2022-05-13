@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hint : MonoBehaviour
+public class hint1 : MonoBehaviour
 {
     public bool hinted = false;
     public Transform transform;
     public int fontSize = 20;
-    private string text = "You again ? Congratulations, prancing child.\nBut there is no room for complacency here.\nThe path shall remain closed to those unnamed.\n\nPress Enter to communicate, I'm waiting for you.";
+    private string text = "Hello fellow traveller.\nYou shall know that in those woods, many have perished.\nAmong the three ways in front of you,\nonly one will bring you hope.\nBe wise and follow the good lights.";
 
     // Start is called before the first frame update
     void Start()

@@ -51,7 +51,7 @@ public class death : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.CompareTag("Checkpoint")){
-            checkpoint = new Vector3(-25.0f, 25.0f, 0.0f);
+            checkpoint = new Vector3(-22.0f, 25.0f, 0.0f);
         }
     }
 
