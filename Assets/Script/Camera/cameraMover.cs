@@ -19,7 +19,7 @@ public class cameraMover : MonoBehaviour
 
     private bool toBeZoomed = false;
     private float zoom = 6.0f;
-    private float ecart = 4.0f;
+    public float ecart = 4.0f;
 
 
 
@@ -54,10 +54,23 @@ public class cameraMover : MonoBehaviour
 
         //scrolling camera
         delta =body.position - transform.position;
+        /*
         if (delta.x>2) {
             transform.position = new Vector3(body.position.x -ecart, transform.position.y + yOffset, transform.position.z);
         }
         if (delta.x<-2) {
+            transform.position = new Vector3(body.position.x +ecart, transform.position.y + yOffset, transform.position.z);
+        }
+        if (delta.y>1) {
+            transform.position = new Vector3(transform.position.x + xOffset, body.position.y - 1 + yOffset, transform.position.z);
+        }
+        if (delta.y<-1) {
+            transform.position = new Vector3(transform.position.x + xOffset, body.position.y + 1 + yOffset, transform.position.z);
+        }*/
+        if (delta.x>ecart) {
+            transform.position = new Vector3(body.position.x -ecart, transform.position.y + yOffset, transform.position.z);
+        }
+        if (delta.x<-ecart) {
             transform.position = new Vector3(body.position.x +ecart, transform.position.y + yOffset, transform.position.z);
         }
         if (delta.y>1) {

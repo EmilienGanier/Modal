@@ -50,6 +50,7 @@ public class BolchiMove : MonoBehaviour
     private void Update()
     {
         CheckInput();
+        body.position = new Vector2(body.position.x, body.position.y + 0.00001f);
     }
 
     void OnCollisionEnter2D(Collision2D other) {
