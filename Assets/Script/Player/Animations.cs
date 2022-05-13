@@ -29,7 +29,7 @@ public class Animations : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "Ground") grounded = true;
+        if (other.collider.tag == "Ground" && other.GetContact(0).normal[1] > 0.001f) grounded = true;
     }
     
     void OnCollisionExit2D(Collision2D other)
