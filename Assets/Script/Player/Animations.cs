@@ -23,8 +23,6 @@ public class Animations : MonoBehaviour
     {
         JumpAnim();
         RunAnim();
-        AttackAnim();
-
     }
 
     void OnCollisionEnter2D(Collision2D other)
